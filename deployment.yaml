@@ -19,12 +19,16 @@ spec:
         imagePullPolicy: Always
         command:
         - redis-server
-        - "/redis-master/redis.conf"
+        - "/redis-config/redis.conf"
         ports:
         - containerPort: 6379
           name: redis
         volumeMounts:
-        - mountPath: /redis-master-data
-          name: data
-        - mountPath: /redis-master
-          name: config
+        - name: data
+          mountPath: /redis-data
+          
+        - name: config
+          mountPath: /redis-config/redis.conf
+          subPath: redis.conf
+          readOnly: true
+        
