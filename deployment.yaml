@@ -34,7 +34,7 @@ spec:
       volumes:
       - name: config
         configMap:
-          name: env-config
+          name: redis
           items:
           - key: config
             path: redis.conf 
