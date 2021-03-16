@@ -31,4 +31,11 @@ spec:
           mountPath: /redis-config/redis.conf
           subPath: redis.conf
           readOnly: true
+      volumes:
+      - name: config
+        configMap:
+          name: env-config
+          items:
+          - key: config
+            path: redis.conf 
         
