@@ -24,7 +24,7 @@ spec:
         - containerPort: 6379
           name: redis
         volumeMounts:
-        - name: data
+        - name: redis-data
           mountPath: /redis-data
           
         - name: config
@@ -36,6 +36,14 @@ spec:
         configMap:
           name: redis
           items:
-          - key: config
+          - key: redis.conf
             path: redis.conf 
+  volumeClaimTemplates:
+  - metadata:
+      name: redis-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi        
         
