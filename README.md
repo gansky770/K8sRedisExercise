@@ -18,5 +18,9 @@
      A Redis pod that has access to a volume, but we want it to maintain access to the same volume even if it is redeployed or restarted
      we need a stable network identity and stable persistent volumes.
   - #### We use  service to expose the redis pod  
-  - StatefulSets require a [ headless service](https://kubernetes.io/docs/concepts/services-networking/service/#headless-services)
- 
+  - - StatefulSets require a [ headless service](https://kubernetes.io/docs/concepts/services-networking/service/#headless-services) to achieve 
+     stable network identity .
+     
+     
+     
+     - curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash) 
