@@ -30,7 +30,7 @@
       -  $git clone  https://github.com/gansky770/K8sRedisExercise.git
       -  $kubectl apply -f . (*command should be run from the YAML files directory*)
        
-  - ### **steps needed to implement helm chart**
+  - ### **Steps needed to implement helm chart**
     - We deploy HELM on our k8s cluster by running the next command from the cluster node
       - $curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash 
     - We run **"$helm create k8sredis"**  command for creating the chart with name k8sredis
