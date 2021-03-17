@@ -18,12 +18,12 @@
      A Redis pod that has access to a volume, but we want it to maintain access to the same volume even if it is redeployed or restarted
      we need a stable network identity and stable persistent volumes.
   - #### We use  [service](https://kubernetes.io/docs/concepts/services-networking/service/) to expose the redis pod  
-  - - StatefulSets require a [ headless service](https://kubernetes.io/docs/concepts/services-networking/service/#headless-services) to achieve 
-     stable network identity .
+    - StatefulSets require a [ headless service](https://kubernetes.io/docs/concepts/services-networking/service/#headless-services) to achieve 
+      stable network identity .
      
   - #### We use [Configmap](https://kubernetes.io/docs/concepts/configuration/configmap/) to mount, configure and manage the redis configuration file - redis.conf   
-   - To achieve  security enabled mode, we set the  **protected-mode yes** in redis.conf file.
-   - To achieve debug mode ,we set the **loglevel debug** in redis.conf
+     - To achieve  security enabled mode, we set the  "**protected-mode yes**" in redis.conf file.
+     - To achieve debug mode ,we set the "**loglevel debug**" in redis.conf file
 
 
 
