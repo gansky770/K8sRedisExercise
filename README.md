@@ -26,7 +26,8 @@
      - To achieve  security enabled mode, we set the  "**protected-mode yes**" in redis.conf file.
      - To achieve debug mode ,we set the "**loglevel debug**" in redis.conf file
 
-   - #### We will clone the repo with created YAML files in the cluster working node and deploy all the objects:
-      -    
+   - #### We will clone the repo with created YAML files in the cluster working node and deploy all the objects :
+      -  git clone  https://github.com/gansky770/K8sRedisExercise.git
+      -  kubectl apply -f . (*command should be run from the YAML files directory*)
 
      - curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash) 
