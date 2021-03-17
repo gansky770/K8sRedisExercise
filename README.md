@@ -21,6 +21,10 @@
   - - StatefulSets require a [ headless service](https://kubernetes.io/docs/concepts/services-networking/service/#headless-services) to achieve 
      stable network identity .
      
-  - #### We use [Configmap](https://kubernetes.io/docs/concepts/configuration/configmap/) to configure and manage the redis configuration file    
-     
+  - #### We use [Configmap](https://kubernetes.io/docs/concepts/configuration/configmap/) to mount, configure and manage the redis configuration file - redis.conf   
+   - - To achieve  security enabled mode we set the 
+    ### protected-mode yes
+
+
+
      - curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash) 
