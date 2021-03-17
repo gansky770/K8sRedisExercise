@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: redis
+  serviceName: redis   
+  template:
+    metadata:
+      labels:
+        name: redis
+    spec:
+      containers:
+      - name: redis
+        image: redis:latest
+        imagePullPolicy: Always
+        command:
+        - redis-server
+        - "/redis-config/redis.conf"
+        ports:
+        - containerPort: 6379
+          name: redis
+        volumeMounts:
+        - name: redis-data
+          mountPath: /redis-data
+          
+        - name: config
+          mountPath: /redis-config/redis.conf
+          subPath: redis.conf
+          readOnly: true
+      volumes:
+      - name: config
+        configMap:
+          name: redis
+          items:
+          - key: redis.conf
+            path: redis.conf 
+  volumeClaimTemplates:
+  - metadata:
+      name: redis-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi        
+        
