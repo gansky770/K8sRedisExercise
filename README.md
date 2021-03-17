@@ -9,7 +9,7 @@
 - Kubectl
 - Redis 6.x
 
-## The main goal:
+## HANDS ON:
 ### Deploy  redis on top of k8s cluster with security enabled and set redis logging to debug mode
 
 ## Steps:
@@ -29,7 +29,8 @@
    - #### We will clone the repo with created YAML files in the cluster working node and deploy all the objects :
       -  $git clone  https://github.com/gansky770/K8sRedisExercise.git
       -  $kubectl apply -f . (*command should be run from the YAML files directory*)
-       
+    
+  ## Bonus questions: 
   - ### **Steps needed to implement helm chart**
     - We deploy HELM on our k8s cluster by running the next command from the cluster node
       - $curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash 
