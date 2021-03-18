@@ -38,7 +38,7 @@
     - The helm Created k8sredis directory with generated template folder , for our exercise we will delete all files in this template folder and put there our YAML           files  from the git repo
     -   Finally  we run **"$helm install k8sredis ./k8sredis"** command to deploy our chart (*k8sredis is the name of the release ./k8sredis the folder of the chart             repo we created*)
    - ### **Recommended Redis Helm chart** 
-     -  **softonic/redis-sharded --version 0.3.0**
+    - **softonic/redis-sharded --version 0.3.0**
      -- $ helm repo add softonic https://charts.softonic.io 
      -- $ helm install my-redis-sharded softonic/redis-sharded --version 0.3.0
 
