@@ -27,16 +27,18 @@
      - To achieve debug mode ,we set the "**loglevel debug**" in redis.conf file
 
    - #### We will clone the repo with created YAML files in the cluster working node and deploy all the objects :
-      -  $git clone  https://github.com/gansky770/K8sRedisExercise.git
-      -  $kubectl apply -f . (*command should be run from the YAML files directory*)
+      -  $ git clone  https://github.com/gansky770/K8sRedisExercise.git
+      -  $ kubectl apply -f . (*command should be run from the YAML files directory*)
     
   ## Bonus questions: 
   - ### **Steps needed to implement helm chart**
     - We deploy HELM on our k8s cluster by running the next command from the cluster node
-      - $curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash 
+      - $ curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash 
     - We run **"$helm create k8sredis"**  command for creating the chart with name k8sredis
     - The helm Created k8sredis directory with generated template folder , for our exercise we will delete all files in this template folder and put there our YAML           files  from the git repo
     -   Finally  we run **"$helm install k8sredis ./k8sredis"** command to deploy our chart (*k8sredis is the name of the release ./k8sredis the folder of the chart             repo we created*)
    - ### **Recommended Redis Helm chart** 
-     - 
+     -  **softonic/redis-sharded --version 0.3.0**
+     -- $ helm repo add softonic https://charts.softonic.io 
+     -- $ helm install my-redis-sharded softonic/redis-sharded --version 0.3.0
 
