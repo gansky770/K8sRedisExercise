@@ -43,9 +43,9 @@
        - $ helm repo add softonic https://charts.softonic.io 
        - $ helm install my-redis-sharded softonic/redis-sharded --version 0.3.0
       - ### What features does it cover ? 
-             This Helm Chart covers sharding feature,offers an easy way to use Redis with multiple independent master instances as shards, and optionally a twemproxy              in front, so that the client can see it as a single redis instance.
-             The main appeal of sharding a database is that it can help to facilitate horizontal scaling, Horizontal scaling is the practice of adding more instances              to an existing stack in order to spread out the load and allow for more traffic and faster processing. 
-             Another benifit of a sharded database architecture is to speed up query response times. When you submit a query on a database that hasn’t been sharded,                it may have to search every row in the table you’re querying before it can find the result set you’re looking for. For an application with a large,                    monolithic database, queries can become prohibitively slow. By sharding one table into multiple, though, queries have to go over fewer rows and their                  result sets are returned much more quickly.
+         This Helm Chart covers sharding feature,offers an easy way to use Redis with multiple independent master instances as shards, and optionally twemproxy in              front, so that the client can see it as a single redis instance.
+         The main appeal of sharding a database is that it can help to facilitate horizontal scaling, Horizontal scaling is the practice of adding more instances              to an existing stack in order to spread out the load and allow for more traffic and faster processing. 
+         Another benifit of a sharded database architecture is to speed up query response times. When you submit a query on a database that hasn’t been sharded,                it may have to search every row in the table you’re querying before it can find the result set you’re looking for. For an application with a large,                    monolithic database, queries can become prohibitively slow. By sharding one table into multiple, though, queries have to go over fewer rows and their                  result sets are returned much more quickly.
              
           #### How sharding works
                                            /- Redis (node 1)
