@@ -37,6 +37,21 @@
     - We run **"$ helm create k8sredis"**  command for creating the chart with name k8sredis
     - The helm Created k8sredis directory with generated template folder , for our exercise we will delete all files in this template folder and put there our YAML           files  from the git repo
     -   Finally  we run **"$ helm install k8sredis ./k8sredis"** command to deploy our chart (*k8sredis is the name of the release ./k8sredis the folder of the chart             repo we created*)
+   - ###  **Checking redis instance health** 
+
+      $ helm install k8sredis ./k8sredis (***deploy a chart***)
+        - NAME: k8sredis
+        - LAST DEPLOYED: Thu Mar 18 12:26:19 2021
+        - NAMESPACE: default
+        - STATUS: deployed
+        - REVISION: 1
+        - TEST SUITE: None
+     - $ kubectl get pods (***get pod status***)
+        - NAME      READY   STATUS    RESTARTS   AGE
+        - redis-0   1/1     Running   0          12s
+     - $ kubectl exec -ti redis-0 /bin/bash (***Get a shell to a running redis container***)
+        - root@redis-0:/data# redis-cli ping (***Checking redis instance health***)
+        - PONG
    - ### **Recommended Redis Helm chart** 
      - **softonic/redis-sharded --version 0.3.0**
      - ### How to deploy:
